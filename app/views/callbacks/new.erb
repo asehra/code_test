@@ -1,14 +1,21 @@
+
+<h1>Welcome!</h1>
+<p>You complete the form. We call you. Good things happen.</p>
 <% unless @errors.empty? %>
-  <ul class="errors">
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
+  <section class="alert alert-danger">
+    <h5>Please fix the errors below before proceeding</h5>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </section>
 <% end %>
 <%= simple_form_for(@callback_request, url: callback_path) do |f| %>
   <%= f.input :name %>
   <%= f.input :business_name %>
   <%= f.input :email %>
   <%= f.input :telephone_number %>
-  <%= f.button :submit, 'Request Callback' %>
+  <%= f.button :submit, 'Request Callback', class: 'btn btn-primary' %>
 <% end %>
+
