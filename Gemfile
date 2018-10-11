@@ -27,7 +27,7 @@ end
 
 group :development, :test do
   gem 'awesome_print'
-  gem 'capybara', '~> 2.16'
+  gem 'capybara', '~> 2.4'
   gem 'dotenv-rails', '~> 2.2'
   gem 'pry-byebug'
   gem 'pry-rails', '~> 0.3'

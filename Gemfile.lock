@@ -266,7 +266,7 @@ DEPENDENCIES
   autoprefixer-rails
   awesome_print
   bootstrap (>= 4.1.2)
-  capybara (~> 2.16)
+  capybara (~> 2.4)
   coffee-rails
   database_cleaner
   dotenv-rails (~> 2.2)
