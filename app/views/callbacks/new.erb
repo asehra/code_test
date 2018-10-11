@@ -1,4 +1,7 @@
 <%= simple_form_for(:callback_request, url: :callback) do |f| %>
   <%= f.input :name %>
+  <%= f.input :business_name %>
+  <%= f.input :email %>
+  <%= f.input :telephone_number %>
   <%= f.button :submit, 'Request Callback' %>
 <% end %>
