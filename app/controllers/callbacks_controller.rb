@@ -9,11 +9,11 @@ class CallbacksController < ApplicationController
 
   def create
     response = LeadsClient.enqueue(callback_request_params)
-    if response.code == '201'
+    if response.success?
       redirect_to :success
     else
       @callback_request = CallbackRequest.new(callback_request_params)
-      @errors = JSON(response.body)["errors"]
+      @errors = response.errors
       render :new
     end
   end
