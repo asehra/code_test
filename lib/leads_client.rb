@@ -11,8 +11,6 @@ module LeadsClient
 
   def self.enqueue(form_data)
     lead = DEFAULT_PARAMS.merge(form_data.to_h)
-    Net::HTTP.post(URI(ENQUEUE_ENDPOINT),
-      lead.to_json,
-      'Content-Type' => 'application/json')
+    Net::HTTP.post_form(URI(ENQUEUE_ENDPOINT), lead)
   end
 end

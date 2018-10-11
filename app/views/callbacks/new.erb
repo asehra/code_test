@@ -1,7 +1,14 @@
-<%= simple_form_for(:callback_request, url: :callback) do |f| %>
+<% unless @errors.empty? %>
+  <ul class="errors">
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= simple_form_for(@callback_request, url: callback_path) do |f| %>
   <%= f.input :name %>
   <%= f.input :business_name %>
   <%= f.input :email %>
-  <%= f.input :telephone %>
+  <%= f.input :telephone_number %>
   <%= f.button :submit, 'Request Callback' %>
 <% end %>
