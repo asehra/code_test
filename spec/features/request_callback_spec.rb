@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Request a callback", :type => :feature do
   scenario "User successfully requests a callback" do
-    visit "/callback"
+    visit "/callback/new"
 
     fill_in "Name", :with => "John Doe"
     click_button "Request Callback"
